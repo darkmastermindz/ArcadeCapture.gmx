@@ -1,0 +1,16 @@
+# Desktop build of the Switch port, for testing without hardware.
+#   make -f Makefile.pc && ./arcadecapture
+# Requires SDL2, SDL2_image and SDL2_mixer development packages.
+
+CC      ?= cc
+CFLAGS  ?= -O2 -g -Wall
+CFLAGS  += $(shell pkg-config --cflags sdl2 SDL2_image SDL2_mixer) -DASSET_DIR='"../"'
+LDLIBS  += $(shell pkg-config --libs sdl2 SDL2_image SDL2_mixer) -lm
+
+arcadecapture: source/main.c
+	$(CC) $(CFLAGS) -o $@ $< $(LDLIBS)
+
+clean:
+	rm -f arcadecapture
+
+.PHONY: clean

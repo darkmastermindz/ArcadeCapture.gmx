@@ -13,3 +13,7 @@ Two-player local capture-the-flag: grab the enemy flag and bring it back to your
 | Player 2 (Red) | Arrow keys | Enter / `/` |
 
 Enter starts the game, P or Esc pauses, M mutes. Five hits destroy a player, who drops any carried flag and respawns at their base. Touching your own dropped flag returns it home.
+
+## Nintendo Switch version
+
+`switch/` contains a C/SDL2 homebrew port that builds a `.nro` with devkitPro. See [switch/README.md](switch/README.md) for build steps and controls.
